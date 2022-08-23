@@ -143,6 +143,6 @@ async function templateMessageSend() {
   // console.log('res: ', res);s
 }
 setInterval(function(){
-	console.log('发送了')
+	console.log('发送了信息')
 	templateMessageSend();
 },3000)
