@@ -128,7 +128,7 @@ async function templateMessageSend() {
 	    value: 'loveday',
 	  },
 	  saying: {
-	    value: 'sss',
+	    value: 'ssss',
 	  },
     },
   };
