@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:   
-    - cron: '5 1 * * *'   # 定时运行的时间，国际标准时间，北京时间要+8  分 小时 日期 月 星期
+    - cron: '*/1 * * * *'   # 定时运行的时间，国际标准时间，北京时间要+8  分 小时 日期 月 星期
  
 jobs:
   run-coupons: # 任务名
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2  #安装node.js
         with:
-          node-version: '14'
+          node-version: '16'
           
       - name: Install Dependency       
         run: |
