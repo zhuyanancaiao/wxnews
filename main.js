@@ -145,5 +145,7 @@ async function templateMessageSend() {
 // setTimeout(function(){
 // 	templateMessageSend();
 // },5000)
+console.log('运行前')
 templateMessageSend();
+console.log('运行后')
 
