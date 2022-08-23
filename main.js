@@ -142,7 +142,5 @@ async function templateMessageSend() {
   let res = await axiosPost(url, params);
   // console.log('res: ', res);s
 }
-setInterval(function(){
-	console.log('发送了信息')
-	templateMessageSend();
-},3000)
+console.log('发送了信息')
+templateMessageSend();
