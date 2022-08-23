@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:   
-    - cron: '10,11,12,13,14,15,16,17,18,19,20,30,40,50,59 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 * * *'   # 定时运行的时间，国际标准时间，北京时间要+8  分 小时 日期 月 星期
+    - cron: '* 0/1 * * * ?'   # 定时运行的时间，国际标准时间，北京时间要+8  分 小时 日期 月 星期
  
 jobs:
   run-coupons: # 任务名
@@ -20,5 +20,9 @@ jobs:
           
       - name: Install Dependency       
         run: |
-          npm install       
+          npm install
+          npm install parse
+          npm install got
+          npm install xmlhttprequest
+          npm install tough-cookie         
           node ./main.js  # 要运行的js脚本，放在根目录下
