@@ -86,19 +86,19 @@ function getNum(){
 }
 
 async function templateMessageSend() {
-  const date = await getNowDate()
-  const loveday = await getDate(date)
-  const weather = await getweather()
-		const love_mesg = weather.data.ganmao
-		const weather_type = weather.data.forecast[0].type
-		const min_temperature = weather.data.forecast[0].low
-		const max_temperature = weather.data.forecast[0].high  
-  const saying = await getSaying()
-  const icon = await getIcon(weather_type)
-  const num = await getNum()
-  // console.log('num===',num)
+  // const date = await getNowDate()
+  // const loveday = await getDate(date)
+  // const weather = await getweather()
+		// const love_mesg = weather.data.ganmao
+		// const weather_type = weather.data.forecast[0].type
+		// const min_temperature = weather.data.forecast[0].low
+		// const max_temperature = weather.data.forecast[0].high  
+  // const saying = await getSaying()
+  // const icon = await getIcon(weather_type)
+  // const num = await getNum()
+  // // console.log('num===',num)
   
-  const colorarry = static.color[num]
+  // const colorarry = static.color[num]
   // console.log('colorarry===',colorarry)
   
   const token = await getToken();
@@ -110,41 +110,31 @@ async function templateMessageSend() {
     url: 'http://www.baidu.com',
     data: {
 	  date: {
-	    value: date,
-	    color: colorarry.cl1,
+	    value: 'date',
 	  },
 	  weather: {
-	    value: weather_type + icon,
-	    color: colorarry.cl2,
+	    value: 'weather_type + icon',
 	  },
 	  min_temperature: {
-	    value: min_temperature,
-	    color: colorarry.cl3,
+	    value: 'min_temperature',
 	  },
 	  max_temperature: {
-	    value: max_temperature,
-	    color: colorarry.cl4,
+	    value: 'max_temperature',
 	  },
 	  love_mesg: {
-	    value: love_mesg,
-	    color: colorarry.cl5,
+	    value: 'love_mesg',
 	  },
 	  love_day: {
-	    value: loveday,
-	    color: colorarry.cl1,
+	    value: 'loveday',
 	  },
 	  saying: {
-	    value: 'ღ'+ saying + 'ღ',
-	    color: colorarry.cl6,
+	    value: 'sss',
 	  },
     },
   };
   let res = await axiosPost(url, params);
- console.log('发送了信息===',res)
+  console.log('发送了信息===',res.status)
 }
-// setTimeout(function(){
-// 	templateMessageSend();
-// },5000)
 console.log('运行前')
 templateMessageSend();
 console.log('运行后')
