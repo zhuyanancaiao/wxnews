@@ -142,7 +142,8 @@ async function templateMessageSend() {
   let res = await axiosPost(url, params);
  console.log('发送了信息===',res)
 }
-setTimeout(function(){
-	templateMessageSend();
-},5000)
+// setTimeout(function(){
+// 	templateMessageSend();
+// },5000)
+templateMessageSend();
 
