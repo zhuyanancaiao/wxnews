@@ -43,7 +43,7 @@ module.exports = {
 	},
 	saying:function(){
 		return new Promise((resolve, reject) => {
-			axios.get('https://api.mcloc.cn/love/')
+			axios.get('https://api.mcloc.cn/love/?type=json')
 				.then(res => {
 					resolve(res);
 				})
