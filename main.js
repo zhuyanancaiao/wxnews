@@ -126,3 +126,6 @@ async function templateMessageSend() {
 //     templateMessageSend();
 // }, 5000); 
 templateMessageSend();
+process.on('unhandledRejection', error => {
+ console.log('我帮你处理了', error.message);
+});
