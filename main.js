@@ -95,23 +95,28 @@ function getNum(){
 async function templateMessageSend() {
 	
   
-  // ================
-  const date = await info.nowDate()
-  const loveday = await info.date()
-  const weather = await info.weather('南京市')
-  		const love_mesg = weather.data.data.ganmao
-  		const weather_type = weather.data.data.forecast[0].type
-  		const min_temperature = weather.data.data.forecast[0].low
-  		const max_temperature = weather.data.data.forecast[0].high  
-  const saying = await info.saying()
-  const icon = await info.weatherIcon(weather_type)
-  const num = await info.randomColor(0,2) 
-  // ================
+  try{
+	// ================
+	const date = await info.nowDate()
+	const loveday = await info.date()
+	const weather = await info.weather('南京市')
+			const love_mesg = weather.data.data.ganmao
+			const weather_type = weather.data.data.forecast[0].type
+			const min_temperature = weather.data.data.forecast[0].low
+			const max_temperature = weather.data.data.forecast[0].high  
+	const saying = await info.saying()
+	const icon = await info.weatherIcon(weather_type)
+	const num = await info.randomColor(0,2) 
+	// ================
+	const token = await getToken();  
+  } catch (err) {
+	 console.log(err) 
+  }
   
   const colorarry = static.color[num]
   // console.log('colorarry===',colorarry)
   
-  const token = await getToken();
+  
   const url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=' + token;
   const params = {
    touser: 'o5Qb46a7Vim04_vkfFVprHzIYL7w', // 用户openid 3dds
