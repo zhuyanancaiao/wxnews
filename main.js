@@ -40,52 +40,15 @@ async function getToken() {
    appid: 'wxfa719149d39f9f76', // 你的appid  1
    secret: 'a43325f1391f463c8750e17c094773a2', // 你的secret 2
   };
-  let res = await axiosGet('https://api.weixin.qq.com/cgi-bin/token', params);
+  try {
+	  var res = await axiosGet('https://api.weixin.qq.com/cgi-bin/token', params);
+  } catch(err) {
+	  console.log(err)
+  }
   return res.data.access_token;
 }
 
-// 今天的日期
-function getNowDate(){
-	return info.nowDate()
-}
-// 时间差
-function getDate(date){
-	return info.date(date)
-}
-// 天气预报
-function getweather(){
-	return new Promise((resolve,reject)=>{
-		info.weather('南京市')
-			.then(res=>{
-				resolve(res.data)
-			})
-	})
-	
-}
-// 每日金句
-function getSaying(){
-	return new Promise((resolve,reject)=>{
-		info.saying()
-			.then(res=>{
-				resolve(res.data)
-			})
-	})
-	
-}
 
-
-// 天气图标
-function getIcon(weather_type){
-	return new Promise((resolve,reject)=>{
-		resolve(info.weatherIcon(weather_type))
-	})
-}
-// 0-2的随机数
-function getNum(){
-	return new Promise((resolve,reject)=>{
-		resolve(info.randomColor(0,2))
-	})
-}
 // async function test(){
 // 	let res2 = await info.saying()
 // 	console.log('res2===',res2.data)
@@ -115,7 +78,6 @@ async function templateMessageSend() {
   }
   
     const colorarry = static.color[num]
-  // console.log('colorarry===',colorarry)
   
   
   const url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=' + token;
@@ -158,8 +120,8 @@ async function templateMessageSend() {
   let res = await axiosPost(url, params);
   console.log('发送了信息===',res.status)
 }
-setTimeout(function(){
-	templateMessageSend();
-},5000)
-templateMessageSend();
 
+
+setInterval(function () { //每5秒刷新一次图表
+    templateMessageSend();
+}, 5000); 
