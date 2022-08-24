@@ -26,7 +26,9 @@ jobs:
           npm install xmlhttprequest
           npm install tough-cookie         
           node ./main.js  # 要运行的js脚本，放在根目录下
-      - name: Use Secrets 		  
+      - name: Deploy 		  
         with:
-          appid:${{secrets.APPID}} 
-		  	
+          appid: ${{ secrets.APPID }}
+          secret: ${{ secrets.SECRET }}
+          template_id: ${{ secrets.TEMPLATE_ID }}
+          touser: ${{ secrets.TOUSER }}	  	
