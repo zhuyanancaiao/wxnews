@@ -72,6 +72,8 @@ function getSaying(){
 	})
 	
 }
+
+
 // 天气图标
 function getIcon(weather_type){
 	return new Promise((resolve,reject)=>{
@@ -84,21 +86,29 @@ function getNum(){
 		resolve(info.randomColor(0,2))
 	})
 }
+// async function test(){
+// 	let res2 = await info.saying()
+// 	console.log('res2===',res2.data)
+// }
+// test()
 
 async function templateMessageSend() {
-  // const date = await getNowDate()
-  // const loveday = await getDate(date)
-  // const weather = await getweather()
-		// const love_mesg = weather.data.ganmao
-		// const weather_type = weather.data.forecast[0].type
-		// const min_temperature = weather.data.forecast[0].low
-		// const max_temperature = weather.data.forecast[0].high  
-  // const saying = await getSaying()
-  // const icon = await getIcon(weather_type)
-  // const num = await getNum()
-  // // console.log('num===',num)
+	
   
-  // const colorarry = static.color[num]
+  // ================
+  const date = await info.nowDate()
+  const loveday = await info.date()
+  const weather = await info.weather('南京市')
+  		const love_mesg = weather.data.data.ganmao
+  		const weather_type = weather.data.data.forecast[0].type
+  		const min_temperature = weather.data.data.forecast[0].low
+  		const max_temperature = weather.data.data.forecast[0].high  
+  const saying = await info.saying()
+  const icon = await info.weatherIcon(weather_type)
+  const num = await info.randomColor(0,2) 
+  // ================
+  
+  const colorarry = static.color[num]
   // console.log('colorarry===',colorarry)
   
   const token = await getToken();
@@ -110,31 +120,41 @@ async function templateMessageSend() {
     url: 'http://www.baidu.com',
     data: {
 	  date: {
-	    value: 'date',
+	    value: date,
+	    color: colorarry.cl1,
 	  },
 	  weather: {
-	    value: 'weather_type + icon',
+	    value: weather_type + icon,
+	    color: colorarry.cl2,
 	  },
 	  min_temperature: {
-	    value: 'min_temperature',
+	    value: min_temperature,
+	    color: colorarry.cl3,
 	  },
 	  max_temperature: {
-	    value: 'max_temperature',
+	    value: max_temperature,
+	    color: colorarry.cl4,
 	  },
 	  love_mesg: {
-	    value: 'love_mesg',
+	    value: love_mesg,
+	    color: colorarry.cl5,
 	  },
 	  love_day: {
-	    value: 'loveday',
+	    value: loveday,
+	    color: colorarry.cl1,
 	  },
 	  saying: {
-	    value: 'ssss',
+	    value: 'ღ'+ saying + 'ღ',
+	    color: colorarry.cl6,
 	  },
     },
   };
   let res = await axiosPost(url, params);
   console.log('发送了信息===',res.status)
 }
+// setTimeout(function(){
+// 	templateMessageSend();
+// },5000)
 console.log('运行前')
 templateMessageSend();
 console.log('运行后')
