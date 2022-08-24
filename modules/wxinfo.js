@@ -1,7 +1,6 @@
 const axios = require('axios');
 const icon = require('./icon.js')
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-axios.defaults.timeout = 9999900;  
 module.exports = {
 	//获取当前日期函数
 	nowDate:function() {
