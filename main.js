@@ -62,7 +62,7 @@ async function templateMessageSend() {
 			var min_temperature = weather.data.data.forecast[0].low
 			var max_temperature = weather.data.data.forecast[0].high  
 	var saying = await info.saying()
-	// console.log(saying.data)
+	console.log(saying.data.hitokoto)
 	var icon = await info.weatherIcon(weather_type)
 	var num = await info.randomColor(0,2) 
 	
@@ -119,10 +119,3 @@ templateMessageSend();
 process.on('unhandledRejection', error => {
  console.log('我帮你处理了', error.message);
 });
-
-require('dotenv').config();
-let aaa = process.env.APPID; // "239482"
-// process.env.USER_KEY; // "foobar"
-// process.env.NODE_ENV; // "development"
-
-console.log('APPID====',aaa)
