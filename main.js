@@ -119,3 +119,4 @@ templateMessageSend();
 process.on('unhandledRejection', error => {
  console.log('我帮你处理了', error.message);
 });
+console.log('全局=====',global)
