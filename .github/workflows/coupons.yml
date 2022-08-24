@@ -17,7 +17,10 @@ jobs:
         uses: actions/setup-node@v2  #安装node.js
         with:
           node-version: '14'
-          
+          APPID: ${{ secrets.APPID }}
+          SECRET: ${{ secrets.SECRET }}
+          TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
+          touser: ${{ secrets.TOUSER }}	  	
       - name: Install Dependency       
         run: |
           npm install
@@ -26,10 +29,4 @@ jobs:
           npm install xmlhttprequest
           npm install tough-cookie         
           node ./main.js  # 要运行的js脚本，放在根目录下
-      - name: Deploy 		  
-        uses: cross-the-world/scp-pipeline@master
-        with:
-          appid: ${{ secrets.APPID }}
-          secret: ${{ secrets.SECRET }}
-          template_id: ${{ secrets.TEMPLATE_ID }}
-          touser: ${{ secrets.TOUSER }}	  	
+          
