@@ -5,7 +5,7 @@ const static = require('./modules/icon.js')
 const axios = require('axios');
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-
+console.log('appid====',appid)
 
 const axiosPost = function (url, params) {
   return new Promise((resolve, reject) => {
