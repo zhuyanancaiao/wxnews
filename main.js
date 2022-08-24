@@ -122,6 +122,7 @@ async function templateMessageSend() {
 }
 
 
-setInterval(function () { //每5秒刷新一次图表
-    templateMessageSend();
-}, 5000); 
+// setInterval(function () { //每5秒刷新一次图表
+//     templateMessageSend();
+// }, 5000); 
+templateMessageSend();
