@@ -49,19 +49,13 @@ async function getToken() {
 }
 
 
-// async function test(){
-// 	let res2 = await info.saying()
-// 	console.log('res2===',res2.data)
-// }
-// test()
-
 async function templateMessageSend() {
 	
   
   try{
 	// ================
 	var date = await info.nowDate()
-	var loveday = await info.date()
+	var loveday = await info.date(date)
 	var weather = await info.weather('南京市')
 			var love_mesg = weather.data.data.ganmao
 			var weather_type = weather.data.data.forecast[0].type
@@ -84,7 +78,7 @@ async function templateMessageSend() {
   const url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=' + token;
   const params = {
    touser: 'o5Qb46a7Vim04_vkfFVprHzIYL7w', // 用户openid 3dds
-   template_id: 'nsPkSagQKgAVBgw6k03pKGjK-OfF330cVUQfiT0Lhyk', // 模板id 4  sssssssssssssssss 
+   template_id: 'kuQ_al-HcmUnCf1H5A14ZNNClvLQKgrfb2epr1uXxwE', // 模板id 4  sssssssssssssssss 
    
     url: 'http://www.baidu.com',
     data: {
@@ -119,13 +113,8 @@ async function templateMessageSend() {
     },
   };
   let res = await axiosPost(url, params);
-  console.log('发送了信息1===',res.status)
+  console.log('发送了信息',res.status)
 }
-
-
-// setInterval(function () { //每5秒刷新一次图表
-//     templateMessageSend();
-// }, 5000); 
 templateMessageSend();
 process.on('unhandledRejection', error => {
  console.log('我帮你处理了', error.message);
