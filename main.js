@@ -68,7 +68,7 @@ async function templateMessageSend() {
 			var min_temperature = weather.data.data.forecast[0].low
 			var max_temperature = weather.data.data.forecast[0].high  
 	var saying = await info.saying()
-	console.log(saying.data.data)
+	console.log(saying.data)
 	var icon = await info.weatherIcon(weather_type)
 	var num = await info.randomColor(0,2) 
 	
@@ -113,7 +113,7 @@ async function templateMessageSend() {
 	    color: colorarry.cl1,
 	  },
 	  saying: {
-	    value: 'ღ'+ saying.data.data + 'ღ',
+	    value: 'ღ'+ saying.data.hitokoto + 'ღ',
 	    color: colorarry.cl6,
 	  },
     },
