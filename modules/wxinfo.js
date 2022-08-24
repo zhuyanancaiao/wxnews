@@ -45,8 +45,7 @@ module.exports = {
 		return new Promise((resolve, reject) => {
 			axios.get('https://api.mcloc.cn/love/')
 				.then(res => {
-					let ress =res.data
-					resolve(ress);
+					resolve(res);
 				})
 				.catch(err => {
 					reject(err);

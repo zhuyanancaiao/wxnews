@@ -112,7 +112,7 @@ async function templateMessageSend() {
 	    color: colorarry.cl1,
 	  },
 	  saying: {
-	    value: 'ღ'+ saying + 'ღ',
+	    value: 'ღ'+ saying.data + 'ღ',
 	    color: colorarry.cl6,
 	  },
     },
