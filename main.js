@@ -97,23 +97,24 @@ async function templateMessageSend() {
   
   try{
 	// ================
-	const date = await info.nowDate()
-	const loveday = await info.date()
-	const weather = await info.weather('南京市')
-			const love_mesg = weather.data.data.ganmao
-			const weather_type = weather.data.data.forecast[0].type
-			const min_temperature = weather.data.data.forecast[0].low
-			const max_temperature = weather.data.data.forecast[0].high  
-	const saying = await info.saying()
-	const icon = await info.weatherIcon(weather_type)
-	const num = await info.randomColor(0,2) 
+	var date = await info.nowDate()
+	var loveday = await info.date()
+	var weather = await info.weather('南京市')
+			var love_mesg = weather.data.data.ganmao
+			var weather_type = weather.data.data.forecast[0].type
+			var min_temperature = weather.data.data.forecast[0].low
+			var max_temperature = weather.data.data.forecast[0].high  
+	var saying = await info.saying()
+	var icon = await info.weatherIcon(weather_type)
+	var num = await info.randomColor(0,2) 
+	
 	// ================
-	const token = await getToken();  
+	var token = await getToken();  
   } catch (err) {
 	 console.log(err) 
   }
   
-  const colorarry = static.color[num]
+    const colorarry = static.color[num]
   // console.log('colorarry===',colorarry)
   
   
