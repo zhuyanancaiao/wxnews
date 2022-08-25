@@ -36,8 +36,8 @@ const axiosGet = function (url, params) {
 
 async function getToken() {
   const params = {
-    grant_type: 'client_credential',
-   appid: 'wxfa719149d39f9f76', // 你的appid  1s
+    grant_type: 'client_credential', 
+   appid: 'wxfa719149d39f9f76', // 你的appid  1s        o5Qb46a7Vim04_vkfFVprHzIYL7w            wxfa719149d39f9f76  蔡奥
    secret: 'a43325f1391f463c8750e17c094773a2', // 你的secret 2
   };
   try {
@@ -66,7 +66,7 @@ async function templateMessageSend() {
 	var icon = await info.weatherIcon(weather_type)
 	var num = await info.randomColor(0,2) 
 	
-	// ================
+	// ===============d=
 	var token = await getToken();  
   } catch (err) {
 	 console.log(err) 
@@ -113,9 +113,9 @@ async function templateMessageSend() {
     },
   };
   let res = await axiosPost(url, params);
-  console.log('发送了信息',res.status)
+  console.log('发送达到了信息',res.status)
 }
 templateMessageSend();
 process.on('unhandledRejection', error => {
- console.log('我帮你处理了', error.message);
+ console.log('我帮你处理了s', error.message);
 });
