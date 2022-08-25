@@ -38,7 +38,7 @@ const axiosGet = function (url, params) {
 async function getToken() {
   const params = {
     grant_type: 'client_credential', 
-   appid: process.env.id, // 你的appid  1s        o5Qb46a7Vim04_vkfFVprHzIYL7w            wxfa719149d39f9f76  蔡奥
+   appid: process.env.id, // 你的appid  1s        
    secret: process.env.secret, // 你的secret 2
   };
   try {
