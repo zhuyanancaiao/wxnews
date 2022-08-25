@@ -20,12 +20,12 @@ jobs:
           node-version: '14'
        
 	  - name: myinfo
-	  - uses: actions/setup-node@v2
-	  - run: |
-		  APP_ID ${{ secrets.APP_ID }}
-		  APP_SECRET ${{ secrets.APP_ID }}
-		  APP_TOUSER ${{ secrets.APP_ID }}
-		  TEMPLATE_ID ${{ secrets.APP_ID }}  
+	    uses: actions/setup-node@v2
+		with:
+		  APP_ID: ${{ secrets.APP_ID }}
+		  APP_SECRET: ${{ secrets.APP_ID }}
+		  APP_TOUSER: ${{ secrets.APP_ID }}
+		  TEMPLATE_ID: ${{ secrets.APP_ID }}  
 
       - name: Install Dependency
         run: |
