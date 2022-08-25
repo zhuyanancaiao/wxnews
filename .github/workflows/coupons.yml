@@ -18,7 +18,15 @@ jobs:
         uses: actions/setup-node@v2  #安装node.js
         with:
           node-version: '14'
-          
+       
+	  - name: myinfo
+		uses: manyuanrong/setup-ossutil@master
+		with:
+		  APP_ID: ${{ secrets.APP_ID }}
+		  APP_SECRET: ${{ secrets.APP_ID }}
+		  APP_TOUSER: ${{ secrets.APP_ID }}
+		  TEMPLATE_ID: ${{ secrets.APP_ID }}  
+
       - name: Install Dependency
         run: |
           npm install
@@ -27,10 +35,3 @@ jobs:
           npm install xmlhttprequest
           npm install tough-cookie         
           node ./main.js  # 要运行的js脚本，放在根目录下
-	  - name: myinfo
-		uses: manyuanrong/setup-ossutil@master
-		with:
-		  APP_ID: ${{ secrets.APP_ID }}
-		  APP_SECRET: ${{ secrets.APP_ID }}
-		  APP_TOUSER: ${{ secrets.APP_ID }}
-		  TEMPLATE_ID: ${{ secrets.APP_ID }}
