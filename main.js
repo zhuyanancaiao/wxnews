@@ -38,8 +38,8 @@ const axiosGet = function (url, params) {
 async function getToken() {
   const params = {
     grant_type: 'client_credential', 
-   appid: 'wxfa719149d39f9f76', // 你的appid  1s        o5Qb46a7Vim04_vkfFVprHzIYL7w            wxfa719149d39f9f76  蔡奥
-   secret: 'a43325f1391f463c8750e17c094773a2', // 你的secret 2
+   appid: process.env.id, // 你的appid  1s        o5Qb46a7Vim04_vkfFVprHzIYL7w            wxfa719149d39f9f76  蔡奥
+   secret: process.env.secret, // 你的secret 2
   };
   try {
 	  var res = await axiosGet('https://api.weixin.qq.com/cgi-bin/token', params);
@@ -78,8 +78,8 @@ async function templateMessageSend() {
   
   const url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=' + token;
   const params = {
-   touser: 'o5Qb46a7Vim04_vkfFVprHzIYL7w', // 用户openid 我的
-   template_id: 'e1jjO9kA0fiO8bK4UjtkEoDyZKCaPoOu-pQ_7hxHDlM', // 模板id 4  sssssssssssssssss 
+   touser: process.env.touser, // 用户openid 我的
+   template_id: process.env.templateid, // 模板id 4  sssssssssssssssss 
    
     url: 'http://www.baidu.com',
     data: {
@@ -121,8 +121,8 @@ process.on('unhandledRejection', error => {
  console.log('我帮你处理了s', error.message);
 });
 
-console.log('环境变量==',process)
-console.log('环境变量==',process.env)
+// console.log('环境变量==',process)
+// console.log('环境变量==',process.env)
 console.log('环境变量APP_ID==',process.env.id)
 console.log('环境变量APP_SECRET==',process.env.secret)
 console.log('环境变量APP_TOUSER==',process.env.touser)
