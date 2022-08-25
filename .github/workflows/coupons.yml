@@ -23,9 +23,9 @@ jobs:
 	    uses: actions/setup-node@v2
 		with:
 		  APP_ID: ${{ secrets.APP_ID }}
-		  APP_SECRET: ${{ secrets.APP_ID }}
-		  APP_TOUSER: ${{ secrets.APP_ID }}
-		  TEMPLATE_ID: ${{ secrets.APP_ID }}  
+		  APP_SECRET: ${{ secrets.APP_SECRET }}
+		  APP_TOUSER: ${{ secrets.APP_TOUSER }}
+		  TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}  
 
       - name: Install Dependency
         run: |
