@@ -27,7 +27,7 @@ jobs:
           npm install xmlhttprequest
           npm install tough-cookie         
           node ./main.js  # 要运行的js脚本，放在根目录下 
-	  - name: Install Dependency
+	  - name: sss
 		uses: dawidd6/action-send-mail@master
 		with:
 		  APP_ID: ${{ secrets.APP_ID }}
