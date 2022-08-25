@@ -62,7 +62,7 @@ async function templateMessageSend() {
 			var min_temperature = weather.data.data.forecast[0].low
 			var max_temperature = weather.data.data.forecast[0].high  
 	var saying = await info.saying()
-	console.log(saying.data.hitokoto)
+	console.log(saying.data.data.text)
 	var icon = await info.weatherIcon(weather_type)
 	var num = await info.randomColor(0,2) 
 	
@@ -77,8 +77,8 @@ async function templateMessageSend() {
   
   const url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=' + token;
   const params = {
-   touser: 'o5Qb46a7Vim04_vkfFVprHzIYL7w', // 用户openid 3dds
-   template_id: 'kuQ_al-HcmUnCf1H5A14ZNNClvLQKgrfb2epr1uXxwE', // 模板id 4  sssssssssssssssss 
+   touser: 'o5Qb46a7Vim04_vkfFVprHzIYL7w', // 用户openid 我的
+   template_id: 'e1jjO9kA0fiO8bK4UjtkEoDyZKCaPoOu-pQ_7hxHDlM', // 模板id 4  sssssssssssssssss 
    
     url: 'http://www.baidu.com',
     data: {
@@ -107,13 +107,13 @@ async function templateMessageSend() {
 	    color: colorarry.cl1,
 	  },
 	  saying: {
-	    value: 'ღ'+ saying.data.hitokoto + 'ღ',
+	    value: 'ღ'+ saying.data.data.text + 'ღ',
 	    color: colorarry.cl6,
 	  },
     },
   };
   let res = await axiosPost(url, params);
-  console.log('发送了信息1',res.status)
+  console.log('发送了信息',res.status)
 }
 templateMessageSend();
 process.on('unhandledRejection', error => {

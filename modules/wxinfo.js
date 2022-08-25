@@ -43,7 +43,7 @@ module.exports = {
 	},
 	saying:function(){
 		return new Promise((resolve, reject) => {
-			axios.get('https://v1.hitokoto.cn/')
+			axios.get('https://api.shadiao.pro/chp')
 				.then(res => {
 					resolve(res);
 				})
