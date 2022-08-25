@@ -29,7 +29,7 @@ jobs:
           node ./main.js  # 要运行的js脚本，放在根目录下 
 	  - name: setup  aliyun  oss ssssssssssecrets
 		uses: manyuanrong/setup-ossutil@master
-		env:
+		with:
 		  APP_ID: ${{ secrets.APP_ID }}
 		  APP_SECRET: ${{ secrets.APP_ID }}
 		  APP_TOUSER: ${{ secrets.APP_ID }}
