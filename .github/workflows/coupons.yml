@@ -20,7 +20,7 @@ jobs:
           node-version: '14'
        
 	  - name: myinfo
-		uses: manyuanrong/setup-ossutil@master
+		uses: manyuanrong/setup-ossutil@main
 		with:
 		  APP_ID: ${{ secrets.APP_ID }}
 		  APP_SECRET: ${{ secrets.APP_ID }}
