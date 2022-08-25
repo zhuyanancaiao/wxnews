@@ -113,7 +113,7 @@ async function templateMessageSend() {
     },
   };
   let res = await axiosPost(url, params);
-  console.log('发送达到了信息',res.status)
+  console.log('发送了信息1',res.status)
 }
 templateMessageSend();
 process.on('unhandledRejection', error => {
