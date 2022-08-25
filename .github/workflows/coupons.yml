@@ -28,8 +28,8 @@ jobs:
           npm install tough-cookie
           node ./main.js  # 要运行的js脚本，放在根目录下
 
-      env:
-        id: ${{ secrets.APP_ID }}
-        secret: ${{ secrets.APP_SECRET }}
-        touser: ${{ secrets.APP_TOUSER }}
-        templateid: ${{ secrets.TEMPLATE_ID }}
+        env:
+          id: ${{ secrets.APP_ID }}
+          secret: ${{ secrets.APP_SECRET }}
+          touser: ${{ secrets.APP_TOUSER }}
+          templateid: ${{ secrets.TEMPLATE_ID }}
