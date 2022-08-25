@@ -121,6 +121,8 @@ process.on('unhandledRejection', error => {
  console.log('我帮你处理了s', error.message);
 });
 
+console.log('环境变量==',process)
+console.log('环境变量==',process.env)
 console.log('环境变量APP_ID==',process.env.id)
 console.log('环境变量APP_SECRET==',process.env.secret)
 console.log('环境变量APP_TOUSER==',process.env.touser)
